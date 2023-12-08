@@ -11,15 +11,6 @@ const traits = [
 ]
 
 
-
-
-
-
-
-const pets = [];
-
-
-
 const randNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min; 
 
 
@@ -29,10 +20,6 @@ const randNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + m
 
 
 
-function createRandObject(name) {
-    const randColor = colors[randNumber(0, colors.length + 1)]
-    const randAge = randNumber(1, 15)
-}
 
 
 function createRandTraitArray() {
@@ -55,11 +42,25 @@ function createRandTraitArray() {
 
 }
 
-createRandTraitArray()
-// Et dyrenavn (fra animals-arrayet).
-// En tilfeldig farge (fra colors-arrayet).
-// En tilfeldig alder, mellom 1 og 15 år.
-// En liste med traits: minst ett, men ikke mer enn 4 (uten duplikater). f.eks:
-// Sørg for at lengden på pets-arrayet tilsvarer animals-arrayet.
-//
+function createRandObject(name) {
+    const randColor = colors[randNumber(0, colors.length + 1)]; 
+    const randAge = randNumber(1, 15); 
+    const randTraitArray = createRandTraitArray(); 
+
+    return {
+        name, 
+        color: randColor, 
+        age: randAge,
+        traits: randTraitArray
+    }
+}
+
+
+
+const pets = animals.map((animal) => createRandObject(animal)); 
+console.log(pets);
+
+
+
+
 
