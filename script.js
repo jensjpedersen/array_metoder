@@ -10,17 +10,7 @@ const traits = [
     "Morsom", "Aktiv", "Rolig", "Selvsikker", "Nervøs"
 ]
 
-
 const randNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min; 
-
-
-
-
-
-
-
-
-
 
 function createRandTraitArray() {
     const [ minNumberOfTraits, maxNumberOfTraits ] = [1, 4]; 
@@ -39,11 +29,10 @@ function createRandTraitArray() {
 
     return traitsArray; 
 
-
 }
 
 function createRandObject(name) {
-    const randColor = colors[randNumber(0, colors.length + 1)]; 
+    const randColor = colors[randNumber(0, colors.length - 1)]; 
     const randAge = randNumber(1, 15); 
     const randTraitArray = createRandTraitArray(); 
 
@@ -56,10 +45,26 @@ function createRandObject(name) {
 }
 
 
-
+// --------------- Problem 1 ---------------
 const pets = animals.map((animal) => createRandObject(animal)); 
 console.log(pets);
 
+
+// Oppgave 2: Implementer Filtreringsfunksjoner
+// Lag en funksjon for å finne et kjæledyr etter navn ved hjelp av find-metoden.
+
+function findAnimal(name, petsArr) {
+    return petsArr.find( (pet) => name.toLowerCase() == pet.name.toLowerCase() )
+}
+
+console.log(findAnimal('hund', pets) );
+
+
+
+// Implementer en funksjon for å finne indeksen til det første kjæledyret av en gitt farge ved hjelp av findIndex.
+// Skriv en funksjon for å finne det siste kjæledyret av en spesifikk alder ved hjelp av findLastIndex og findLast.
+// Utvikle en funksjon for å filtrere kjæledyr etter et spesifikt trekk ved hjelp av filter.
+// Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement()) detaljene til hvert kjæledyr.
 
 
 
