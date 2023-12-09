@@ -54,14 +54,24 @@ console.log(pets);
 // Lag en funksjon for å finne et kjæledyr etter navn ved hjelp av find-metoden.
 
 function findAnimal(name, petsArr) {
-    return petsArr.find( (pet) => name.toLowerCase() == pet.name.toLowerCase() )
+    return petsArr.find((pet) => name.toLowerCase() == pet.name.toLowerCase())
 }
 
 console.log(findAnimal('hund', pets) );
 
 
-
 // Implementer en funksjon for å finne indeksen til det første kjæledyret av en gitt farge ved hjelp av findIndex.
+function findIndexOfColor(color, petsArr) {
+    const index = petsArr.findIndex((pet) => pet.color.toLowerCase() == color.toLowerCase()); 
+    if (index == -1) { return 'No pets with that color' }
+
+    return index;
+}
+
+
+const colorIndex = findIndexOfColor('rød', pets); 
+console.log('pet with color red at index: ', colorIndex, pets[colorIndex]);
+
 // Skriv en funksjon for å finne det siste kjæledyret av en spesifikk alder ved hjelp av findLastIndex og findLast.
 // Utvikle en funksjon for å filtrere kjæledyr etter et spesifikt trekk ved hjelp av filter.
 // Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement()) detaljene til hvert kjæledyr.
