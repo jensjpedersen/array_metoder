@@ -87,8 +87,14 @@ console.log(lastAnimal(10, pets));
 console.log(lastAnimal2(10, pets));
 
 
-
 // Utvikle en funksjon for å filtrere kjæledyr etter et spesifikt trekk ved hjelp av filter.
+function filterByTrait(trait, petsArr) {
+    return petsArr.filter(pet => pet.traits.includes(trait) )
+}
+
+console.log("Oppgave 2.4");
+console.log(filterByTrait('Modig', pets));
+
 // Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement()) detaljene til hvert kjæledyr.
 
 
