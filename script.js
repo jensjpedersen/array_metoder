@@ -95,7 +95,9 @@ function filterByTrait(trait, petsArr) {
 console.log("Oppgave 2.4");
 console.log(filterByTrait('Modig', pets));
 
-// Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement()) detaljene til hvert kjæledyr.
+// Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement())
+// detaljene til hvert kjæledyr.
+console.log("Oppgave 2.5");
 
 
 
