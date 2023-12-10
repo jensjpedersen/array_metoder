@@ -73,6 +73,21 @@ const colorIndex = findIndexOfColor('rød', pets);
 console.log('pet with color red at index: ', colorIndex, pets[colorIndex]);
 
 // Skriv en funksjon for å finne det siste kjæledyret av en spesifikk alder ved hjelp av findLastIndex og findLast.
+function lastAnimal(age, petsArr) {
+    return petsArr.findLast(pet => pet.age == age); 
+}
+
+function lastAnimal2(age, petsArr) {
+    const lastAnimalIndex = petsArr.findLastIndex(pet => pet.age == age); 
+    return petsArr[lastAnimalIndex]; 
+}
+
+console.log("Oppgave 2.3");
+console.log(lastAnimal(10, pets));
+console.log(lastAnimal2(10, pets));
+
+
+
 // Utvikle en funksjon for å filtrere kjæledyr etter et spesifikt trekk ved hjelp av filter.
 // Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement()) detaljene til hvert kjæledyr.
 
