@@ -97,7 +97,18 @@ console.log(filterByTrait('Modig', pets));
 
 // Bruk forEach eller map metoden for å console.logge (eller vise på nettsiden vha document.createElement())
 // detaljene til hvert kjæledyr.
+function display(petsArr) {
+    const outerElement = document.getElementById("container"); 
+    petsArr.forEach(pet => {
+        divElement = document.createElement('div') 
+        divElement.innerHTML = JSON.stringify(pet); 
+        outerElement.append(divElement)
+    })
+}
+
 console.log("Oppgave 2.5");
+display(pets); 
+
 
 
 
